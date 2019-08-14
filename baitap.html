@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADAM EVA</title>
+</head>
+<body>
+<script>
+    let Apple = function(){
+        this.weight = 10;
+    };
+    let Human = function(name,gender,weight){
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.void = function(){
+            let arrMan = ["Hello!","I am "+this.name+"!","I am very handsome!","I am very strong!"];
+            let arrWoman = ["Hello","I am "+this.name+"!","Iam very beautiful"];
+            if(this.gender === 'Man'){
+                for(let i=0;i<arrMan.length;i++){
+                    console.log(arrMan[i]);
+                }
+            }else{
+                for(let i=0;i<arrWoman.length;i++){
+                    console.log(arrWoman[i]);
+                }
+            }
+        };
+        this.checkApple = function (apple) {
+            if(apple.weight>0){
+                console.log("Can eat Apple! Apple weight = "+apple.weight);
+            } else {
+                console.log("Apples have been eaten!");
+            }
+        };
+        this.eatApple = function(apple){
+            if(apple.weight>0){
+                console.log(this.name+" just ate a piece of apple!");
+                this.weight++;
+                apple.weight--;
+            } else {
+                console.log("Apples have been eaten!");
+            }
+        }
+    };
+
+    let appleOne = new Apple();
+    let adam = new Human('Adam','Man',70);
+    adam.void();
+    let eva = new Human('Eva','Woman',45);
+    eva.void();
+    adam.checkApple(appleOne);
+    adam.eatApple(appleOne);
+    eva.checkApple(appleOne);
+    eva.eatApple(appleOne);
+    adam.eatApple(appleOne);
+    eva.eatApple(appleOne);
+    adam.eatApple(appleOne);
+    eva.eatApple(appleOne);
+    adam.eatApple(appleOne);
+    eva.eatApple(appleOne);
+    adam.eatApple(appleOne);
+    eva.eatApple(appleOne);
+    adam.eatApple(appleOne);
+    eva.eatApple(appleOne);
+</script>
+</body>
+</html>
